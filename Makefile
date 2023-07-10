@@ -21,7 +21,7 @@ INPR=/dgldir/inprogress-zapm
 
 #ARCH = -arch i386 -arch ppc
 
-LIBS= -lpanel -lcurses
+LIBS= -lpanel -lncurses
 INCLUDE=
 #LDFLAGS= $(ARCH)
 LDFLAGS=
@@ -41,8 +41,8 @@ install: all
 	-chown $(ZAPMOWNER) $(CHROOT)$(DATADIR)
 	-chown $(ZAPMOWNER) $(CHROOT)$(INPR)
 	-chown $(ZAPMOWNER) $(GAMEDIR)/zapm
-	chmod 04755 $(GAMEDIR)/zapm
-	chmod 04755 $(CHROOT)$(DATADIR)
+	chmod 00755 $(GAMEDIR)/zapm
+	chmod 00755 $(CHROOT)$(DATADIR)
 	chmod 00755 $(CHROOT)$(INPR)
 
 zdebug: oneuser zapm
